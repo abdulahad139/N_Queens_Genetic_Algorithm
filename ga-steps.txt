@@ -1,0 +1,34 @@
+Representing individuals of the population
+Generate an initial population
+Fitness Function Calculation
+Selecting the fitted population
+Crossover
+Mutation
+Repeat until best solution is found
+
+
+
+We are going to generate lists of size n that represent the placement of the queen on the board where n will also be
+the number of the queens and size of the chessboard (nxn). Each element of the list represents the value of the row
+and the index of the list represents the column of the row and as a whole, it represents each queen's position
+on the board.
+
+Next, we calculate the fitness function which is the calculate no of non-attacking pairs i.e how many queens are
+in non-attacking position for a specific queen. Let's say we have a queen in the first row for an nxn chessboard
+and if only one other queen attacks it then, all others are in non-attacking position. So, for 8x8, for Q1, 6/7
+queens are non-attacking. As we move on, our previous assignments will not be considered for the value of each
+queen. !!!The sum of non-attacking queens is the fitness value for a particular population!!!
+For an 8x8 chessboard, we have 28 pairs of non-attacking queens and for a 4x4 chessboard, we have 6 pairs of
+non-attacking queens.
+
+For selecting the best population, we will calculate the selection probability of all fitness values.
+!!!!    ((Sum of all fitness values)/Fitness of a particular population)     !!!!
+Then, the cumulative probability, which will be used to generate indices for parents. These parents will be used
+in the crossover stage.
+
+We perform crossover between each pair population. We will randomly swap genes(values) of the population(list)
+with the other population(list).
+
+There will a chance of random mutation.
+
+The whole algorithm will run for a specified number of generations and may not generate a solution!
